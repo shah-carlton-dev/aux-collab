@@ -45,7 +45,7 @@ export default function Header(props) {
 
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
-			<AppBar position="fixed" className="aux-appbar" style={{ boxShadow: "none" }}>
+			<AppBar position="sticky" className="aux-appbar" style={{ boxShadow: "none" }}>
 				<Toolbar>
 					<Grid container>
 						<Grid item xs={3}>
