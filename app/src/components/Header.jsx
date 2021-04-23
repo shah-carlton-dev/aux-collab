@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core"
 import { AppBar, Toolbar, Button, IconButton, Grid, Slide, useScrollTrigger } from '@material-ui/core';
 import headphonesLogo from "../assets/desktop-6auxlogo1-6A76F79B-B362-4BA2-B330-1E9D04F0284A@2x.png";
 import "../styles/Header.css";
+import Scrollspy from "react-scrollspy";
 
 const useStyles = makeStyles({
 	navbarDisplayFlex: {
@@ -44,7 +45,7 @@ export default function Header(props) {
 
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
-			<AppBar position="fixed" className="aux-appbar" style={{boxShadow: "none"}}>
+			<AppBar position="fixed" className="aux-appbar" style={{ boxShadow: "none" }}>
 				<Toolbar>
 					<Grid container>
 						<Grid item xs={3}>
@@ -56,11 +57,11 @@ export default function Header(props) {
 						</Grid>
 						<Grid item container xs={9} direction="row" alignItems="center" justify="center" >
 							<Grid item container xs={9} justify="flex-end">
-								{navLinks.map(({ title, path }) => (
-									<Grid item className={classes.navLink}>
-										<a href={path} key={title} className={classes.linkText} >{title}</a>
-									</Grid>
-								))}
+									{navLinks.map(({ title, path }) => (
+										<Grid item className={classes.navLink}>
+											<a href={path} key={title} className={classes.linkText} >{title}</a>
+										</Grid>
+									))}
 							</Grid>
 							<Grid item className={classes.navLink}>
 								<Button variant="outlined" onClick={() => ""}>Download Beta</Button>
