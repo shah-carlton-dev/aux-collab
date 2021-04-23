@@ -2,7 +2,7 @@
 /* https://stackoverflow.com/questions/50840168/how-to-detect-if-the-os-is-in-dark-mode-in-browsers */
 @media (prefers-color-scheme: dark) {
   body {
-      background-color: rgb(32, 32, 32);
+      background-color: rgb(10, 10, 12);
       color: white;
   }
 }
