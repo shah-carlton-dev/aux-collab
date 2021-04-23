@@ -11,7 +11,7 @@ export default function Section4(props) {
     const classes = useStyles();
     return (
         <Grid item container className={classes.landingSection} id="4">
-            <Box m={12}>
+            <Box m={6}>
                 yeah4
             </Box>
 
