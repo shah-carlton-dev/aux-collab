@@ -1,16 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header.jsx';
-import { Switch, Route } from 'react-router-dom';
+import Landing from './components/Landing.jsx';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Switch>
-        <Route></Route>
-        <Route></Route>
-      </Switch>
+        <Header />
+      <Landing />
     </div>
   );
 }

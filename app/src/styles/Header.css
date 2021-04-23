@@ -1,0 +1,13 @@
+.MuiToolbar-regular {
+    height: 84px;
+    background-color: rgb(10, 10, 14);
+}
+
+.MuiButton-outlined {
+    border: 2px solid rgb(150,0,138)!important;
+    border-radius: 13px !important;
+}
+
+.MuiButton-root {
+    color: white !important;
+}
