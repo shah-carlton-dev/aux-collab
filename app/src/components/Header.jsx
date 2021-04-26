@@ -30,14 +30,15 @@ export default function Header(props) {
 
 	const navLinks = [
 		{
+			title: "About",
+			path: "#1",
+		}, {
 			title: "How It Works",
 			path: "#2",
-		},
-		{
+		}, {
 			title: "Features",
 			path: "#3",
-		},
-		{
+		}, {
 			title: "Contact",
 			path: "#4",
 		}
@@ -57,11 +58,11 @@ export default function Header(props) {
 						</Grid>
 						<Grid item container xs={9} direction="row" alignItems="center" justify="center" >
 							<Grid item container xs={9} justify="flex-end">
-									{navLinks.map(({ title, path }) => (
-										<Grid item className={classes.navLink}>
-											<a href={path} key={title} className={classes.linkText} >{title}</a>
-										</Grid>
-									))}
+								{navLinks.map(({ title, path }) => (
+									<Grid item className={classes.navLink}>
+										<a href={path} key={title} className={classes.linkText} >{title}</a>
+									</Grid>
+								))}
 							</Grid>
 							<Grid item className={classes.navLink}>
 								<Button variant="outlined" onClick={() => ""}>Download Beta</Button>

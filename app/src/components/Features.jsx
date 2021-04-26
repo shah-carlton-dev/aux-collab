@@ -7,13 +7,14 @@ const useStyles = makeStyles({
     }
 });
 
-export default function Section3(props) {
+export default function Section4(props) {
     const classes = useStyles();
     return (
         <Grid item container className={classes.landingSection} id="3">
             <Box m={6}>
-                yeah3
+                yeah4
             </Box>
+
         </Grid>
     )
 }
