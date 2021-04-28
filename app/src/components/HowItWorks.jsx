@@ -3,7 +3,7 @@ import { makeStyles, Grid, Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
     landingSection: {
-        height: `100vh`,
+        height: `50vh`,
     }
 });
 

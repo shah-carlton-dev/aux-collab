@@ -1,0 +1,17 @@
+.contactWrapper {
+    height: 85vh;
+    width: 100vw;
+    background-image: url('../assets/Contactbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contactHeader {
+    margin-top: 3vh !important;
+}
+
+.contactButton {
+    margin-left: 8vw !important;
+    background-color: #AE209A !important;
+    padding: 10px 25px !important;
+    border-radius: 20px !important;
+}
