@@ -14,3 +14,17 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.fade-in-section-features {
+    opacity: 0;
+    transform: translateX(20vw);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section-features.is-visible-features {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
