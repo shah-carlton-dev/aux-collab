@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/Contact.css';
 import {Typography, Button} from '@material-ui/core';
-
+// import cImage from '../assets/contact-revised.png';
 export default function Contact (props) {
     return (
     <div className="contactWrapper">
