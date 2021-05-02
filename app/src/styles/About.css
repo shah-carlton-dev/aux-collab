@@ -1,4 +1,4 @@
-.fade-in-section {
+.fade-in-section-about {
     opacity: 0;
     transform: translateX(-20vw);
     visibility: hidden;
@@ -6,7 +6,7 @@
     will-change: opacity, visibility;
 }
 
-.fade-in-section.is-visible {
+.fade-in-section-about.is-visible-about {
     opacity: 1;
     transform: none;
     visibility: visible;

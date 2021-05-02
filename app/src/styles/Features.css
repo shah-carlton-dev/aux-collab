@@ -3,8 +3,7 @@
     height: 400px;
     border: double 1em transparent;
     border-radius: 30px;
-    background-image: linear-gradient(rgb(27,27,27), rgb(27,27,27)), 
-                      linear-gradient(to right, #A9209C, #6720B3);
+    background-image: linear-gradient(rgb(27,27,27), rgb(27,27,27)), linear-gradient(to right, #A9209C, #6720B3);
     background-origin: border-box;
     background-clip: content-box, border-box;
     margin: 0 auto;
@@ -13,4 +12,18 @@
 .text-div {
     margin-left: 10%;
     margin-right: 10%;
+}
+
+.fade-in-section-features {
+    opacity: 0;
+    transform: translateX(20vw);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section-features.is-visible-features {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
 }

@@ -37,7 +37,7 @@ function FadeInSection(props) {
         observer.observe(domRef.current);
     }, []);
     return (
-        <div className={`fade-in-section ${isVisible ? 'is-visible' : ''}`} ref={domRef} >
+        <div className={`fade-in-section-about ${isVisible ? 'is-visible-about' : ''}`} ref={domRef} >
             {props.children}
         </div>
     );
