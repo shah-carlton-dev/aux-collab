@@ -64,7 +64,6 @@ export default function Section3(props) {
                     </Grid>
                 </Grid>
             </Grid>
-
         </Grid>
     )
 }
