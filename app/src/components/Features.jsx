@@ -83,7 +83,7 @@ export default function Section4(props) {
                 <Typography align="center" variant="h2">Key Functionalities</Typography>
             </Grid>
             <Grid item md={6}>
-                <Carousel stopAutoPlayOnHover="true" align="center">
+                <Carousel autoPlay="false" stopAutoPlayOnHover="true" align="center">
                     {items.map((item, i) => <Item key={i} item={item}/>)}
                 </Carousel>
             </Grid>

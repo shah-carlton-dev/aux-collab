@@ -53,6 +53,9 @@ const useStyles = makeStyles(() => ({
     backgroundClip: 'content-box, border-box',
     boxShadow: '2px 1000px 1px #0A0A11 inset',
     borderRadius: '90px'
+    },
+    modal: {
+        outline: 'none !important'
     }
 }));
 
@@ -197,6 +200,9 @@ export default function Contact(props) {
                 BackdropProps={{
                     className: classes.contactBackdrop
                 }}
+                disableAutoFocus={true}
+                disableEnforceFocus={true}
+                className={classes.modal}
             >
                 {body}
             </Modal>
