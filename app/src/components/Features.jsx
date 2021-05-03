@@ -7,10 +7,11 @@ const useStyles = makeStyles({
     featureSection: {
         backgroundColor: 'rgb(27,27,27)',
         borderTop: '2px solid white',
-        paddingBottom: '5vh'
+        paddingBottom: '5vh',
+        overflow: `hidden`
     },
     featureImg: {
-        height: `60vh`,
+        height: `50vh`,
     },
     header: {
         fontFamily: `'Prompt', sans-serif`,
