@@ -5,7 +5,7 @@ import phoneplayer from "../assets/desktop-3aux-3d-mockup-laying-down-647EDE2D-6
 
 const useStyles = makeStyles(theme => ({
     landingSection: {
-        minHeight: `90vh`,
+        minHeight: `75vh`,
     },
     subtitle: {
         fontFamily: `'Montserrat', sans-serif`,

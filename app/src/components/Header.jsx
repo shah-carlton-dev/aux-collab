@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core"
-import { AppBar, Toolbar, Button, IconButton, Grid, Slide, useScrollTrigger } from '@material-ui/core';
+import { AppBar, Toolbar, Button, IconButton, Grid, Typography, TextField, Slide, useScrollTrigger, Modal} from '@material-ui/core';
 import headphonesLogo from "../assets/desktop-6auxlogo1-6A76F79B-B362-4BA2-B330-1E9D04F0284A@2x.png";
 import "../styles/Header.css";
 import Scrollspy from "react-scrollspy";
+import '../styles/Contact.css';
+import popupImage from '../assets/ContactPopUp.png';
 
 const useStyles = makeStyles({
 	navbarDisplayFlex: {
@@ -17,12 +19,14 @@ const useStyles = makeStyles({
 	navLink: {
 		textAlign: `center`,
 		paddingLeft: `34px`
-	}
+	},
 });
 
 export default function Header(props) {
 	const classes = useStyles();
 	const trigger = useScrollTrigger();
+
+	const [open, setOpen] = useState(false);
 
 	const scrollToTop = () => {
 		console.log("icon clicked");
@@ -43,7 +47,6 @@ export default function Header(props) {
 			path: "#4",
 		}
 	];
-
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
 			<AppBar position="sticky" className="aux-appbar" style={{ boxShadow: "none" }}>
@@ -65,7 +68,7 @@ export default function Header(props) {
 								))}
 							</Grid>
 							<Grid item xs={4} className={classes.navLink}>
-								<Button variant="outlined" onClick={() => ""}>Download Beta</Button>
+								<Button variant="outlined" href={'#4'}>Beta Access</Button>
 							</Grid>
 						</Grid>
 					</Grid>

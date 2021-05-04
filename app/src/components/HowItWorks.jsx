@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     },
     stepKid: {
         fontFamily: `Montserrat`,
-        fontSize: `18px`,
+        fontSize: `22px`,
         textAlign: `center`,
     }
 });
