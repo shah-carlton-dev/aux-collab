@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
     sec2container: {
         margin: `0 5vw`,
-        minHeight: `100vh`,
+        minHeight: `90vh`,
     },
     body: {
         fontFamily: `Montserrat`,
@@ -25,19 +25,6 @@ const useStyles = makeStyles({
     },
     fullHeight: {
         marginTop: '50px'
-    },
-    ourGoal: {
-        fontFamily: `'Prompt', sans-serif`,
-        fontSize: `40px`,
-        fontWeight: `200`,
-        lineHeight: `50px`,
-        textAlign: `center`,
-        margin: `0px`
-    },
-    goalBody: {
-        fontFamily: `Montserrat`,
-        fontSize: `18px`,
-        textAlign: `center`,
     },
     swirlWrap:{
         marginTop: `3vw`,
@@ -95,12 +82,7 @@ export default function About(props) {
                         <img src={squirrelydan} className={classes.swirl} />
                     </div>
                 </Grid>
-                <Grid item>
-                    <h4 className={classes.ourGoal}>Our Goal</h4>
-                    <Box mx={7}>
-                        <p className={classes.goalBody}>We want to reinvent your daily collaborative music experience. Everything from your next event down to your daily drive with friends, Aux has you covered. Leave the hassle of music selection in the past with seamless, cross-platform group collaboration. At Aux, our mission is to provide our users with the tools necessary to make every group listening experience an Aux experience.</p>
-                    </Box>
-                </Grid>
+                
             </Grid>
         </Grid>
     )
