@@ -128,7 +128,7 @@ export default function Contact(props) {
                         <Grid item md={6}>
                             <TextField 
                                 className={classes.contactItem} 
-                                label="First Name" 
+                                label="Last Name" 
                                 variant="filled"
                                 required
                                 fullWidth
@@ -219,7 +219,26 @@ export default function Contact(props) {
             <div className={classes.innerContact}>
                 <Typography align="center" variant="h4"> Submit your Apple ID to request beta access today:</Typography>
                 <form className={classes.contactForm} noValidate autoComplete="off">
-                    <Grid item container>
+                    <Grid item container spacing={3}>
+                        <Grid item md={12}>
+                            <TextField 
+                                className={classes.contactItem} 
+                                label="Email" 
+                                variant="filled"
+                                fullWidth
+                                required
+                                InputProps={{
+                                    className: classes.multilineColor
+                                }}
+                                InputLabelProps={{
+                                classes: {
+                                    root: classes.label,
+                                    focused: classes.focusedLabel,
+                                },
+                                }}
+                            > 
+                            </TextField>
+                        </Grid>
                         <Grid item md={12}>
                             <TextField 
                                 className={classes.contactItem} 
@@ -255,8 +274,8 @@ export default function Contact(props) {
         <div className="contactWrapper">
             <div class="contact-row">
                 <div class="contact-column">
-                    <Button className="contactButton" variant="contained" onClick={handleOpen}>
-                        <Typography align="center" variant="h4"> Contact </Typography>
+                    <Button variant="contained" className={classes.betaAccess} onclick={handleOpen}>
+                        <Typography align="center" variant="h6"> Contact </Typography>
                     </Button>
                 </div>
                 <div class="contact-column-mid">
@@ -265,9 +284,11 @@ export default function Contact(props) {
                     </Typography>   
                 </div>
                 <div class="contact-column">
-                    <Button className="contactButton" variant="contained" onClick={handleOpenTwo}>
-                        <Typography align="center" variant="h4"> Request Demo </Typography>
-                    </Button>
+                    <Typography align="center">
+                        <Button variant="contained" onclick={handleOpenTwo} className={classes.betaAccess   }>
+                            <Typography align="center" variant="h6"> Request Beta Access </Typography>
+                        </Button>
+                    </Typography>
                 </div>
             </div>
             <Modal
