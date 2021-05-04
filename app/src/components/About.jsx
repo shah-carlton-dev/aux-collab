@@ -54,7 +54,8 @@ const useStyles = makeStyles({
     },
     aboutText: {
         marginLeft: '10%'
-    }
+    },
+
 });
 
 function FadeInSection(props) {

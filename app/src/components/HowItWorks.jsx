@@ -1,6 +1,9 @@
 import React from "react";
 import { makeStyles, Grid, Box } from '@material-ui/core';
-
+import easyOne from '../assets/easy-1.png'
+import easyTwo from '../assets/easy-2.png'
+import easyThree from '../assets/easy-3.png'
+import '../styles/HowItWorks.css'
 const useStyles = makeStyles({
     howItWorksSection: {
         minHeight: `70vh`,
@@ -27,15 +30,22 @@ const useStyles = makeStyles({
         fontFamily: `Montserrat`,
         fontSize: `22px`,
         textAlign: `center`,
+    },
+    stepKidSpecial: {
+        fontFamily: `Montserrat`,
+        fontSize: `22px`,
+        textAlign: `center`,
+        marginBottom: '20px'
     }
 });
 
 export default function Section3(props) {
     const classes = useStyles();
     return (
-        <Grid item container xs={12} className={classes.howItWorksSection} id="2">
+        <div className="howWorksWrapper">
+            <Grid item container xs={12} className={classes.howItWorksSection} id="2">
             <Grid item className={classes.stepDad}>
-                <h4 className={classes.stepByStep}>How it works: Step by Step</h4>
+                <h4 className={classes.stepByStep}>As Easy As</h4>
             </Grid>
             <Grid item container direction="row" justify="space-evenly" alignItems="flex-start" className={classes.steps} >
                 <Grid item container direction="column" xs={3}>
@@ -43,16 +53,21 @@ export default function Section3(props) {
                         1
                     </Grid>
                     <Grid item className={classes.stepKid}>
-                    After downloading our mobile application, link your streaming service account, and create your Aux account. Aux uses your live listening data from Spotify to curate collaborative playlists with other users in your party lobby.
+                        <img src={easyOne} />
+                    </Grid>
+                    <Grid item className={classes.stepKid}>
+                        Find who you'd like to make a playlist with. You can find people by proximity or simply search their username. 
                     </Grid>
                 </Grid>
                 <Grid item container direction="column" xs={3}>
                     <Grid item className={classes.stepMom}>
                         2
                     </Grid>
+                    <Grid item className={classes.stepKidSpecial}>
+                        Select the genres you'd like to have represented in your listening experience. 
+                    </Grid>
                     <Grid item className={classes.stepKid}>
-                    Once logged into Aux, nearby available users will appear on your Aux home screen. Simply drag and drop the desired users into the playlist party lobby and watch the magic happen. Aux will use artificial intelligence to cross reference your music taste with the music taste of your party lobby to curate the optimal listening experience for everyone.
-
+                        <img src={easyTwo} />
                     </Grid>
                 </Grid>
                 <Grid item container direction="column" xs={3}>
@@ -60,10 +75,14 @@ export default function Section3(props) {
                         3
                     </Grid>
                     <Grid item className={classes.stepKid}>
-                    Now the only thing left to do is enjoy Aux’s limitless applications. From picnics to parties to Sunday brunch, music is everywhere. Anytime where you’re listening to music with two or more people, Aux has got you covered.
+                        <img src={easyThree} />
+                    </Grid>
+                    <Grid item className={classes.stepKid}>
+                        Now Aux's algorithms will get to work curating the perfect listening environment.
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
+        </div>
     )
 }
