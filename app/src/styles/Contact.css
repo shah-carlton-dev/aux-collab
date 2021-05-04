@@ -1,8 +1,8 @@
 .contactWrapper {
     height: 85vh;
     width: 100vw;
-    background-image: url('../assets/contact-revised.png');
-    background-size: cover;
+    background-image: url('../assets/contact-darkbg.png');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 .contactHeader {
@@ -10,8 +10,29 @@
 }
 
 .contactButton {
-    margin-left: 8vw !important;
     background-color: #AE209A !important;
     padding: 10px 25px !important;
     border-radius: 20px !important;
+    display: inline-block !important;
+    height: 100px !important;
+    width: 200px !important;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-column {
+    flex: 25%;
+    padding: 15px;
+}
+
+.contact-column-mid {
+    flex: 50%;
+    padding: 15px;
 }

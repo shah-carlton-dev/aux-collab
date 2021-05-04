@@ -5,6 +5,8 @@ import About from "./components/About";
 import HowItWorks from "./components/HowItWorks";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 import { makeStyles, Grid } from "@material-ui/core";
 import AuxBackground from "./assets/AuxBackground.png";
 
@@ -27,6 +29,7 @@ function App() {
         <HowItWorks />
         <Features />
         <Contact />
+        <Footer />
       </Grid>
     </div>
   );

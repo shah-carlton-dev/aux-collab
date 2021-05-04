@@ -1,0 +1,42 @@
+.logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+.footer-wrapper {
+    background-color: #1b191d;
+    width: 100%;
+    height: 200px;
+
+}
+.logo-column {
+    flex: 20%;
+    padding: 15px;
+}
+.logo-column-mid {
+    flex: 20%;
+    padding: 1px;
+}
+.ft-img-main {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.ft-img {
+    width: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.carousel-text {
+    font-size: 150%;
+}
+
+.carousel-header {
+    font-size: 160%;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, Grid, Box } from '@material-ui/core';
 import section2img from "../assets/desktop-collabgraphic-E525152A-F8F0-4C56-8CF0-1924ABD97151.png";
 import squirrelydan from "../assets/sqirl-2.png";
-import auxicon from "../assets/bottom-logo.png";
+import auxicon from "../assets/actual-aux-logo.png";
 import "../styles/About.css";
 
 const useStyles = makeStyles({

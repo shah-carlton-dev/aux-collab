@@ -4,6 +4,7 @@ import { Typography, Button, Modal, makeStyles, TextField, Grid} from '@material
 import { useState } from 'react';
 import popupImage from '../assets/ContactPopUp.png';
 
+
 const useStyles = makeStyles(() => ({
     paper: {
         position: 'absolute',
@@ -56,6 +57,23 @@ const useStyles = makeStyles(() => ({
     },
     modal: {
         outline: 'none !important'
+    },
+    contactButton: {
+        marginTop: '28px'
+    },
+    betaAccess: {
+        backgroundColor: '#0A0A11',
+        "&:hover, &:focus": {
+            backgroundColor: '#0A0A11 !important',
+        },
+    boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
+    border: 'solid 3px transparent',
+    backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
+    backgroundOrigin: 'border-box',
+    backgroundClip: 'content-box, border-box',
+    boxShadow: '2px 1000px 1px #0A0A11 inset',
+    borderRadius: '90px',
+        marginTop: '50px'
     }
 }));
 
@@ -63,6 +81,8 @@ const useStyles = makeStyles(() => ({
 export default function Contact(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    const [openTwo, setOpenTwo] = useState(false);
+
 
     const handleOpen = () => {
         setOpen(true);
@@ -70,6 +90,14 @@ export default function Contact(props) {
 
     const handleClose = () => {
         setOpen(false);
+    }
+
+    const handleOpenTwo = () => {
+        setOpenTwo(true);
+    }
+
+    const handleCloseTwo = () => {
+        setOpenTwo(false);
     }
 
     const body = (
@@ -186,14 +214,62 @@ export default function Contact(props) {
             </div>
         </div>
     )
+    const bodyTwo = (
+        <div className={classes.paper}>
+            <div className={classes.innerContact}>
+                <Typography align="center" variant="h4"> Submit your Apple ID to request beta access today:</Typography>
+                <form className={classes.contactForm} noValidate autoComplete="off">
+                    <Grid item container>
+                        <Grid item md={12}>
+                            <TextField 
+                                className={classes.contactItem} 
+                                label="Apple ID" 
+                                variant="filled"
+                                fullWidth
+                                required
+                                InputProps={{
+                                    className: classes.multilineColor
+                                }}
+                                InputLabelProps={{
+                                classes: {
+                                    root: classes.label,
+                                    focused: classes.focusedLabel,
+                                },
+                                }}
+                            > 
+                            </TextField>
+                        </Grid>
+                        <Grid item md={12}>
+                            <Typography align="center">
+                                <Button variant="contained" className={classes.betaAccess   }>
+                                    <Typography align="center" variant="h6"> Get Access </Typography>
+                                </Button>
+                            </Typography>
+                        </Grid>
+                    </Grid>      
+                </form>
+            </div>
+        </div>
+    )
     return (
         <div className="contactWrapper">
-            <Typography align="center" variant="h2" className="contactHeader">
-                Questions? We're listening
-                <Button className="contactButton" variant="contained" onClick={handleOpen}>
-                    <Typography align="center" variant="h4"> Contact </Typography>
-                </Button>
-            </Typography>
+            <div class="contact-row">
+                <div class="contact-column">
+                    <Button className="contactButton" variant="contained" onClick={handleOpen}>
+                        <Typography align="center" variant="h4"> Contact </Typography>
+                    </Button>
+                </div>
+                <div class="contact-column-mid">
+                    <Typography align="center" variant="h2" className="contactHeader">
+                        Try Aux Yourself
+                    </Typography>   
+                </div>
+                <div class="contact-column">
+                    <Button className="contactButton" variant="contained" onClick={handleOpenTwo}>
+                        <Typography align="center" variant="h4"> Request Demo </Typography>
+                    </Button>
+                </div>
+            </div>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -205,6 +281,19 @@ export default function Contact(props) {
                 className={classes.modal}
             >
                 {body}
+            </Modal>
+
+            <Modal
+                open={openTwo}
+                onClose={handleCloseTwo}
+                BackdropProps={{
+                    className: classes.contactBackdrop
+                }}
+                disableAutoFocus={true}
+                disableEnforceFocus={true}
+                className={classes.modal}
+            >
+                {bodyTwo}
             </Modal>
         </div>
     )
