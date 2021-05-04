@@ -3,7 +3,7 @@ import { makeStyles, Grid, Box, Typography, Button } from '@material-ui/core';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import Carousel from 'react-material-ui-carousel'
-import featureImg from "../assets/key-fns.png"
+import featureImg from "../assets/Music.png"
 import '../styles/Features.css';
 import carouselbg from '../assets/carousel-background.png';
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         minHeight: `100vh`
     },
     featureImg: {
-        height: `50vh`,
+        height: `40vh`,
     },
     header: {
         fontFamily: `'Prompt', sans-serif`,
