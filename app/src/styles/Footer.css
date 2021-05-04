@@ -8,9 +8,9 @@
   }
 .footer-wrapper {
     background-color: #1b191d;
-    width: 100%;
+    width: 100vw;
     height: 200px;
-
+    overflow: hidden;
 }
 .logo-column {
     flex: 20%;

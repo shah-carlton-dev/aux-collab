@@ -9,27 +9,27 @@ const Footer = () => {
 
     return (
         <React.Fragment>
-            <div class="footer-wrapper">
-                <div class="logo-row">
-                    <div class="logo-column">
+            <div className="footer-wrapper">
+                <div className="logo-row">
+                    <div className="logo-column">
                         <a href="http://www.google.com" target="_blank">
                             <img src={fb} alt="facebook" className="ft-img" />
                         </a>
                     </div>
-                    <div class="logo-column">
+                    <div className="logo-column">
                         <a href="http://www.google.com" target="_blank">
                             <img src={insta} alt="instagram" className="ft-img" />
                         </a>
                     </div>
-                    <div class="logo-column-mid">
+                    <div className="logo-column-mid">
                         <img src={logo} alt="aux logo" className="ft-img-main" />
                     </div>
-                    <div class="logo-column">
+                    <div className="logo-column">
                         <a href="http://www.google.com" target="_blank">
                             <img src={linkedIn} alt="facebook" className="ft-img" />
                         </a>
                     </div>
-                    <div class="logo-column">
+                    <div className="logo-column">
                         <a href="http://www.google.com" target="_blank">
                             <img src={twitter} alt="twitter" className="ft-img" />
                         </a>

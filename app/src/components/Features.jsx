@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         backgroundColor: `rgb(27,25,28)`,
         paddingBottom: '5vh',
         overflow: `hidden`,
-        height: `100vh`
+        minHeight: `100vh`
     },
     featureImg: {
         height: `50vh`,
@@ -45,8 +45,8 @@ const useStyles = makeStyles({
         marginRight: `2px`
     },
     carouselContainer: {
-        minHeight: `50vh`,
-        maxHeight: `50vh`
+        minHeight: `80vh`,
+        maxHeight: `80vh`
     },
     wrapper: {
         backgroundImage: `url(${carouselbg})`,
@@ -61,7 +61,8 @@ const useStyles = makeStyles({
     pureCarousel: {
         backgroundImage: `url(${carouselbg})`,
         backgroundSize: `100% 100%`,
-        padding: `20%`
+        padding: `20%`,
+        height: `100%`
     },
     dotsWrap: {
         paddingTop: ``,
@@ -83,20 +84,6 @@ function FadeInSection(props) {
             {props.children}
         </div>
     );
-}
-
-function Item(props) {
-    const classes = useStyles();
-    return (
-        <div className={classes.topWrapper}>
-            <div className={classes.wrapper}>
-                <div class={classes.carouselContent}>
-                    <h2 className={classes.carouselHeader}>{props.item.name}</h2>
-                    <p className={classes.carouselText}>{props.item.description}</p>
-                </div>
-            </div>
-        </div>
-    )
 }
 
 export default function Section4(props) {
@@ -130,10 +117,10 @@ export default function Section4(props) {
     ]
     return (
         <Grid item container className={classes.featureSection} id="3" alignItems="center">
-            <Grid item md={12} className={classes.title}>
+            <Grid item xs={12} className={classes.title}>
                 <Typography align="center" variant="h2">Key Functionalities</Typography>
             </Grid>
-            <Grid item sm={6}>
+            <Grid item xs={6}>
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={90}
@@ -151,19 +138,13 @@ export default function Section4(props) {
                             </Slide>
                         ))}
                     </Slider>
-                    {/* <ButtonBack disabled={false}>
-                    <Button variant="outlined">{"<"}</Button>
-                </ButtonBack>
-                <ButtonNext disabled={false}>
-                    <Button variant="outlined">{">"}</Button>
-                </ButtonNext> */}
                     <div className={classes.dotsWrap}>
                         <DotGroup />
                     </div>
                 </CarouselProvider>
             </Grid>
-            <Grid item md={1}></Grid>
-            <Grid item md={5}>
+            <Grid item xs={1}></Grid>
+            <Grid item xs={5}>
                 <Box>
                     <FadeInSection>
                         <img src={featureImg} className={classes.featureImg} />

@@ -1,12 +1,14 @@
 import React from "react";
 import { makeStyles, Grid, Box } from '@material-ui/core';
-import easyOne from '../assets/easy-1.png'
-import easyTwo from '../assets/easy-2.png'
-import easyThree from '../assets/easy-3.png'
+import easyOne from '../assets/bigeasy-1.png'
+import easyTwo from '../assets/bigeasy-2.png'
+import easyThree from '../assets/bigeasy-3.png'
 import '../styles/HowItWorks.css'
 const useStyles = makeStyles({
     howItWorksSection: {
         minHeight: `70vh`,
+        maxWidth: `100vw`,
+        // overflow: `hidden`
     },
     stepByStep: {
         fontFamily: `'Prompt', sans-serif`,
@@ -30,6 +32,9 @@ const useStyles = makeStyles({
         fontFamily: `Montserrat`,
         fontSize: `22px`,
         textAlign: `center`,
+        height: `45vh`,
+        width: `auto`,
+        maxWidth: `25vw`
     },
     stepKidSpecial: {
         fontFamily: `Montserrat`,
@@ -53,7 +58,7 @@ export default function Section3(props) {
                         1
                     </Grid>
                     <Grid item className={classes.stepKid}>
-                        <img src={easyOne} />
+                        <img height="100%" src={easyOne} />
                     </Grid>
                     <Grid item className={classes.stepKid}>
                         Find who you'd like to make a playlist with. You can find people by proximity or simply search their username. 
@@ -67,7 +72,7 @@ export default function Section3(props) {
                         Select the genres you'd like to have represented in your listening experience. 
                     </Grid>
                     <Grid item className={classes.stepKid}>
-                        <img src={easyTwo} />
+                        <img height="100%" src={easyTwo} />
                     </Grid>
                 </Grid>
                 <Grid item container direction="column" xs={3}>
@@ -75,7 +80,7 @@ export default function Section3(props) {
                         3
                     </Grid>
                     <Grid item className={classes.stepKid}>
-                        <img src={easyThree} />
+                        <img height="100%" src={easyThree} />
                     </Grid>
                     <Grid item className={classes.stepKid}>
                         Now Aux's algorithms will get to work curating the perfect listening environment.

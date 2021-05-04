@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Contact.css';
-import { Typography, Button, Modal, makeStyles, TextField, Grid} from '@material-ui/core';
+import { Typography, Button, Modal, makeStyles, TextField, Grid } from '@material-ui/core';
 import { useState } from 'react';
 import popupImage from '../assets/ContactPopUp.png';
 
@@ -30,11 +30,11 @@ const useStyles = makeStyles(() => ({
         background: 'rgba(216, 216, 216, 0.5)',
         borderRadius: '10px'
     },
-    multilineColor:{
-        color:'white'
+    multilineColor: {
+        color: 'white'
     },
     label: {
-        color:'white'
+        color: 'white'
     },
     focusedLabel: {
         color: 'white'
@@ -47,13 +47,13 @@ const useStyles = makeStyles(() => ({
         "&:hover, &:focus": {
             backgroundColor: '#0A0A11 !important',
         },
-    boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
-    border: 'solid 3px transparent',
-    backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'content-box, border-box',
-    boxShadow: '2px 1000px 1px #0A0A11 inset',
-    borderRadius: '90px'
+        boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
+        border: 'solid 3px transparent',
+        backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'content-box, border-box',
+        boxShadow: '2px 1000px 1px #0A0A11 inset',
+        borderRadius: '90px'
     },
     modal: {
         outline: 'none !important'
@@ -66,14 +66,16 @@ const useStyles = makeStyles(() => ({
         "&:hover, &:focus": {
             backgroundColor: '#0A0A11 !important',
         },
-    boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
-    border: 'solid 3px transparent',
-    backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'content-box, border-box',
-    boxShadow: '2px 1000px 1px #0A0A11 inset',
-    borderRadius: '90px',
-        marginTop: '50px'
+        boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
+        border: 'solid 3px transparent',
+        backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'content-box, border-box',
+        boxShadow: '2px 1000px 1px #0A0A11 inset',
+        borderRadius: '90px',
+        marginTop: '50px',
+        whiteSpace: `nowrap`,
+        width: `22vw`
     }
 }));
 
@@ -107,9 +109,9 @@ export default function Contact(props) {
                 <form className={classes.contactForm} noValidate autoComplete="off">
                     <Grid item container spacing={2}>
                         <Grid item md={6}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="First Name" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="First Name"
                                 variant="filled"
                                 required
                                 fullWidth
@@ -117,18 +119,18 @@ export default function Contact(props) {
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
+                            >
                             </TextField>
                         </Grid>
                         <Grid item md={6}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Last Name" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="Last Name"
                                 variant="filled"
                                 required
                                 fullWidth
@@ -136,55 +138,55 @@ export default function Contact(props) {
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
-                            </TextField> 
-                        </Grid>
-                        <Grid item md={6}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Email" 
-                                variant="filled"
-                                fullWidth
-                                required
-                                InputProps={{
-                                    className: classes.multilineColor
-                                }}
-                                InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
-                                }}
-                            > 
+                            >
                             </TextField>
                         </Grid>
                         <Grid item md={6}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Phone Number" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="Email"
+                                variant="filled"
+                                fullWidth
+                                required
+                                InputProps={{
+                                    className: classes.multilineColor
+                                }}
+                                InputLabelProps={{
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
+                                }}
+                            >
+                            </TextField>
+                        </Grid>
+                        <Grid item md={6}>
+                            <TextField
+                                className={classes.contactItem}
+                                label="Phone Number"
                                 variant="filled"
                                 fullWidth
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
-                            </TextField> 
+                            >
+                            </TextField>
                         </Grid>
                         <Grid item md={12}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Message" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="Message"
                                 variant="filled"
                                 required
                                 fullWidth
@@ -194,13 +196,13 @@ export default function Contact(props) {
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
-                            </TextField> 
+                            >
+                            </TextField>
                         </Grid>
                         <Grid item md={12}>
                             <Typography align="center">
@@ -209,7 +211,7 @@ export default function Contact(props) {
                                 </Button>
                             </Typography>
                         </Grid>
-                    </Grid>      
+                    </Grid>
                 </form>
             </div>
         </div>
@@ -221,9 +223,9 @@ export default function Contact(props) {
                 <form className={classes.contactForm} noValidate autoComplete="off">
                     <Grid item container spacing={3}>
                         <Grid item md={12}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Email" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="Email"
                                 variant="filled"
                                 fullWidth
                                 required
@@ -231,18 +233,18 @@ export default function Contact(props) {
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
+                            >
                             </TextField>
                         </Grid>
                         <Grid item md={12}>
-                            <TextField 
-                                className={classes.contactItem} 
-                                label="Apple ID" 
+                            <TextField
+                                className={classes.contactItem}
+                                label="Apple ID"
                                 variant="filled"
                                 fullWidth
                                 required
@@ -250,42 +252,42 @@ export default function Contact(props) {
                                     className: classes.multilineColor
                                 }}
                                 InputLabelProps={{
-                                classes: {
-                                    root: classes.label,
-                                    focused: classes.focusedLabel,
-                                },
+                                    classes: {
+                                        root: classes.label,
+                                        focused: classes.focusedLabel,
+                                    },
                                 }}
-                            > 
+                            >
                             </TextField>
                         </Grid>
                         <Grid item md={12}>
                             <Typography align="center">
-                                <Button variant="contained" className={classes.betaAccess   }>
+                                <Button variant="contained" className={classes.betaAccess}>
                                     <Typography align="center" variant="h6"> Get Access </Typography>
                                 </Button>
                             </Typography>
                         </Grid>
-                    </Grid>      
+                    </Grid>
                 </form>
             </div>
         </div>
     )
     return (
         <div className="contactWrapper">
-            <div class="contact-row">
-                <div class="contact-column">
-                    <Button variant="contained" className={classes.betaAccess} onclick={handleOpen}>
+            <div className="contact-row">
+                <div className="contact-column">
+                    <Button variant="contained" className={classes.betaAccess} onClick={handleOpen}>
                         <Typography align="center" variant="h6"> Contact </Typography>
                     </Button>
                 </div>
-                <div class="contact-column-mid">
+                <div className="contact-column-mid">
                     <Typography align="center" variant="h2" className="contactHeader">
                         Try Aux Yourself
-                    </Typography>   
+                    </Typography>
                 </div>
-                <div class="contact-column">
+                <div className="contact-column">
                     <Typography align="center">
-                        <Button variant="contained" onclick={handleOpenTwo} className={classes.betaAccess   }>
+                        <Button variant="contained" onClick={handleOpenTwo} className={classes.betaAccess}>
                             <Typography align="center" variant="h6"> Request Beta Access </Typography>
                         </Button>
                     </Typography>

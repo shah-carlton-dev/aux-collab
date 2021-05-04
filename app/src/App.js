@@ -14,7 +14,7 @@ import AuxBackground from "./assets/AuxBackground.png";
 const useStyles = makeStyles(theme => ({
   app: {
     backgroundImage: `url(${AuxBackground})`,
-    backgroundSize: `100% 100%`
+    backgroundSize: `100vw 100%`
   }
 }));
 
