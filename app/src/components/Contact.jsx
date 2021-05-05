@@ -3,7 +3,7 @@ import '../styles/Contact.css';
 import { Typography, Button, Modal, makeStyles, TextField, Grid } from '@material-ui/core';
 import { useState } from 'react';
 import popupImage from '../assets/ContactPopUp.png';
-
+import Axios from "axios";
 
 const useStyles = makeStyles(() => ({
     paper: {
@@ -84,7 +84,7 @@ export default function Contact(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [openTwo, setOpenTwo] = useState(false);
-
+    let fname, lname, email, phone, message = "";
 
     const handleOpen = () => {
         setOpen(true);
@@ -102,6 +102,23 @@ export default function Contact(props) {
         setOpenTwo(false);
     }
 
+    const sendMessage = (e) => {
+        e.preventDefault();
+        const name = fname + " " + lname;
+        const fnurl = "https://us-central1-aux-collab.cloudfunctions.net/sendEmail";
+        Axios.post(
+            fnurl,
+            {
+                name,
+                email,
+                phone,
+                message
+            },
+        ).then(res => {
+            console.log(res);
+        }).catch();
+    }
+
     const body = (
         <div className={classes.paper}>
             <div className={classes.innerContact}>
@@ -115,6 +132,7 @@ export default function Contact(props) {
                                 variant="filled"
                                 required
                                 fullWidth
+                                onChange={e => (fname = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -134,6 +152,7 @@ export default function Contact(props) {
                                 variant="filled"
                                 required
                                 fullWidth
+                                onChange={e => (lname = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -153,6 +172,7 @@ export default function Contact(props) {
                                 variant="filled"
                                 fullWidth
                                 required
+                                onChange={e => (email = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -171,6 +191,7 @@ export default function Contact(props) {
                                 label="Phone Number"
                                 variant="filled"
                                 fullWidth
+                                onChange={e => (phone = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -191,6 +212,7 @@ export default function Contact(props) {
                                 required
                                 fullWidth
                                 multiline
+                                onChange={e => (message = e.target.value)}
                                 rows={5}
                                 InputProps={{
                                     className: classes.multilineColor
@@ -206,7 +228,7 @@ export default function Contact(props) {
                         </Grid>
                         <Grid item md={12}>
                             <Typography align="center">
-                                <Button variant="contained" className={classes.submitBtn}>
+                                <Button variant="contained" className={classes.submitBtn} onClick={(e) => sendMessage(e)}>
                                     <Typography align="center" variant="h6"> Send Message </Typography>
                                 </Button>
                             </Typography>
