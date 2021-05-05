@@ -98,7 +98,7 @@ const Countdown = (props) => {
     });
 
     return (
-        <Grid item container justify="center">
+        <Grid item container justify="center"> 
             <Card className={classes.countdownCard}>
                 <CardContent>
                     <h4 className={classes.countdownAmt}>{days}</h4>
@@ -185,6 +185,9 @@ export default function Landing(props) {
                         </Box>
                     </Slide>
 
+                </Grid>
+                <Grid item md={6}>
+                    {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/GfueGrOLXS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                 </Grid>
             </Grid>
         </Grid>

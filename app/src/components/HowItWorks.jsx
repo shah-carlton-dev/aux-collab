@@ -4,7 +4,7 @@ import easyOne from '../assets/bigeasy-1.png'
 import easyTwo from '../assets/bigeasy-2.png'
 import easyThree from '../assets/bigeasy-3.png'
 import '../styles/HowItWorks.css'
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
     howItWorksSection: {
         minHeight: `70vh`,
         maxWidth: `100vw`,
@@ -34,15 +34,37 @@ const useStyles = makeStyles({
         textAlign: `center`,
         height: `45vh`,
         width: `auto`,
-        maxWidth: `25vw`
+        maxWidth: `25vw`,
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: `80vw`,
+            margin: 'auto',
+            height: '20vh'
+        }
     },
     stepKidSpecial: {
         fontFamily: `Montserrat`,
         fontSize: `22px`,
         textAlign: `center`,
-        marginBottom: '20px'
+        marginBottom: '20px',
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: `80vw`,
+            margin: 'auto',
+            display: 'none'
+        }
+    },
+    stepKidSpecialSmall: {
+        display: 'none',
+        [theme.breakpoints.down('sm')]: {
+            display: 'block',
+            fontFamily: `Montserrat`,
+            fontSize: `22px`,
+            textAlign: `center`,
+            marginBottom: '20px',
+            maxWidth: `80vw`,
+            margin: 'auto'
+        }
     }
-});
+}));
 
 export default function Section3(props) {
     const classes = useStyles();
@@ -53,7 +75,7 @@ export default function Section3(props) {
                 <h4 className={classes.stepByStep}>As Easy As</h4>
             </Grid>
             <Grid item container direction="row" justify="space-evenly" alignItems="flex-start" className={classes.steps} >
-                <Grid item container direction="column" xs={3}>
+                <Grid item container direction="column" sm={3}>
                     <Grid item className={classes.stepMom}>
                         1
                     </Grid>
@@ -64,7 +86,7 @@ export default function Section3(props) {
                         Find who you'd like to make a playlist with. You can find people by proximity or simply search their username. 
                     </Grid>
                 </Grid>
-                <Grid item container direction="column" xs={3}>
+                <Grid item container direction="column" sm={3}>
                     <Grid item className={classes.stepMom}>
                         2
                     </Grid>
@@ -74,8 +96,11 @@ export default function Section3(props) {
                     <Grid item className={classes.stepKid}>
                         <img height="100%" src={easyTwo} />
                     </Grid>
+                    <Grid item className={classes.stepKidSpecialSmall}>
+                        Select the genres you'd like to have represented in your listening experience. 
+                    </Grid>
                 </Grid>
-                <Grid item container direction="column" xs={3}>
+                <Grid item container direction="column" sm={3}>
                     <Grid item className={classes.stepMom}>
                         3
                     </Grid>
