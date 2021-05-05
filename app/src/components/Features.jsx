@@ -35,12 +35,13 @@ const useStyles = makeStyles({
         fontFamily: `'Prompt', sans-serif`,
         fontSize: `30px`,
         fontWeight: `200`,
+        lineHeight: `30px`,
         marginBottom: `0px`,
-        marginTop: `-8px`
+        marginTop: `0px`
     },
     carouselText: {
         fontFamily: `Montserrat`,
-        fontSize: `18px`,
+        fontSize: `16px`,
         marginLeft: `2px`,
         marginRight: `2px`
     },
