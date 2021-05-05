@@ -4,6 +4,7 @@ import { Typography, Button, Modal, makeStyles, TextField, Grid } from '@materia
 import { useState } from 'react';
 import popupImage from '../assets/ContactPopUp.png';
 import Axios from "axios";
+import { db } from "../firestore.js";
 
 const useStyles = makeStyles(() => ({
     paper: {
@@ -84,7 +85,9 @@ export default function Contact(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [openTwo, setOpenTwo] = useState(false);
-    let fname, lname, email, phone, message = "";
+    const [emailSuccess, setEmailSuccess] = useState(false);
+    const [accessSuccess, setAccessSuccess] = useState(false);
+    let appleid, fname, lname, email, phone, message = "";
 
     const handleOpen = () => {
         setOpen(true);
@@ -92,6 +95,8 @@ export default function Contact(props) {
 
     const handleClose = () => {
         setOpen(false);
+        setEmailSuccess(false);
+        fname = lname = email = phone = message = "";
     }
 
     const handleOpenTwo = () => {
@@ -100,6 +105,8 @@ export default function Contact(props) {
 
     const handleCloseTwo = () => {
         setOpenTwo(false);
+        setAccessSuccess(false);
+        appleid = email = "";
     }
 
     const sendMessage = (e) => {
@@ -115,8 +122,18 @@ export default function Contact(props) {
                 message
             },
         ).then(res => {
-            console.log(res);
+            setEmailSuccess(res.data.isEmailSend);
+            setTimeout(handleClose, 1000);
         }).catch();
+    }
+
+    const getAccess = (e) => {
+        e.preventDefault();
+        const data = { email, appleid };
+        const accessRef = db.collection("beta-access").add(data);
+        console.log(accessRef);
+        setAccessSuccess(true);
+        setTimeout(handleCloseTwo, 1000);
     }
 
     const body = (
@@ -231,6 +248,7 @@ export default function Contact(props) {
                                 <Button variant="contained" className={classes.submitBtn} onClick={(e) => sendMessage(e)}>
                                     <Typography align="center" variant="h6"> Send Message </Typography>
                                 </Button>
+                                {emailSuccess ? <p>Sent successfully!</p> : <></>}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -251,6 +269,7 @@ export default function Contact(props) {
                                 variant="filled"
                                 fullWidth
                                 required
+                                onChange={e => (email = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -270,6 +289,7 @@ export default function Contact(props) {
                                 variant="filled"
                                 fullWidth
                                 required
+                                onChange={e => (appleid = e.target.value)}
                                 InputProps={{
                                     className: classes.multilineColor
                                 }}
@@ -284,9 +304,11 @@ export default function Contact(props) {
                         </Grid>
                         <Grid item md={12}>
                             <Typography align="center">
-                                <Button variant="contained" className={classes.betaAccess}>
+                                <Button variant="contained" className={classes.betaAccess} onClick={e => getAccess(e)}>
                                     <Typography align="center" variant="h6"> Get Access </Typography>
                                 </Button>
+                                {accessSuccess ? <p>Early access request sent successfully!</p> : <></>}
+
                             </Typography>
                         </Grid>
                     </Grid>
@@ -295,7 +317,7 @@ export default function Contact(props) {
         </div>
     )
     return (
-        <div className="contactWrapper">
+        <div className="contactWrapper" id="4">
             <div className="contact-row">
                 <div className="contact-column">
                     <Button variant="contained" className={classes.betaAccess} onClick={handleOpen}>

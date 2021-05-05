@@ -137,7 +137,7 @@ const Countdown = (props) => {
 
 export default function Landing(props) {
     const classes = useStyles();
-    const releaseDate = new Date(2021, 4, 15, 17);
+    const releaseDate = new Date(2021, 4, 28);
     const currentDate = new Date();
     let days = releaseDate.getDate() - currentDate.getDate();
     let hours = releaseDate.getHours() - currentDate.getHours();

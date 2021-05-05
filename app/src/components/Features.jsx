@@ -123,7 +123,7 @@ export default function Section4(props) {
             <Grid item xs={6}>
                 <CarouselProvider
                     naturalSlideWidth={100}
-                    naturalSlideHeight={90}
+                    naturalSlideHeight={100}
                     totalSlides={6}
                     className={classes.pureCarousel}
                     infinite={true}

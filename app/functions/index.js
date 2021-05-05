@@ -24,6 +24,9 @@ let transporter = nodemailer.createTransport({
 //export the cloud function called `sendEmail`
 exports.sendEmail = functions.https.onRequest((req, res) => {
 
+    console.log(email)
+    console.log(pass)
+
     res.set('Access-Control-Allow-Origin', '*')
     res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
     res.set('Access-Control-Allow-Headers', '*')
@@ -38,10 +41,10 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
                 return
             }
 
-            const htmlMessage = `<p>Contact info offered: </p> <br/> 
-                    <p>Phone: ${req.body.phone} </p> <br/> 
-                    <p>Email: ${req.body.email}</p><br/><br/>
-                    <p>Message body:</p><br/>${req.body.message}`;
+            const htmlMessage = `
+                    <p>Phone: ${req.body.phone} </p>
+                    <p>Email: ${req.body.email}</p>
+                    <p>Message: ${req.body.message}</p>`;
 
             const mailOptions = {
                 from: req.body.email,
