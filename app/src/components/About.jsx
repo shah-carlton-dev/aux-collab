@@ -69,8 +69,8 @@ export default function About(props) {
                     </FadeInSection>
                 </Grid>
                 <Grid item md={6} className={classes.aboutText}>
-                    <h4 className={classes.creatingPlaylists}>Aux connects people by finding common ground through music</h4>   
-                    <p className={classes.body}>We all listen to music. It’s constantly around us. Why not harness the power of our music to bring ourselves closer to one another? Aux uses machine learning to blend your music tastes and preferences with the tastes and preferences of the group to curate the best possibe middle ground playlist for any situation. Whether you’re on a roadtrip with friends, enjoying a cup of coffee at your local spot, or throwing a dinner party, Aux is the perfect way to effortlessly listen together.</p>
+                    <h4 className={classes.creatingPlaylists}>Aux Finds Common Ground</h4>   
+                    <p className={classes.body}>Aux uses AI to blend your music tastes with the preferences of others to curate the best playlist for any situation. Whether you’re on a roadtrip with friends, enjoying a cup of coffee at your local spot, or throwing a dinner party, Aux is the perfect way to effortlessly listen together.</p>
                 </Grid>
             </Grid>
             <Grid item container direction="column">

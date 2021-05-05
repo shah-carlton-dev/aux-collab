@@ -29,7 +29,7 @@ export default function OurGoal(props) {
         <Grid item className={classes.goalWrap}>
             <h4 className={classes.ourGoal}>Our Goal</h4>
             <Box mx={{ sm: 2, md: 12 }}>
-                <p className={classes.goalBody}>We want to reinvent your daily collaborative music experience. Everything from your next event down to your daily drive with friends, Aux has you covered. Leave the hassle of music selection in the past with seamless, cross-platform group collaboration. At Aux, our mission is to provide our users with the tools necessary to make every group listening experience an Aux experience.</p>
+                <p className={classes.goalBody}>We’re reimagining the collaborative music experience. Our AI learns your music preferences better than you to provide unparalleled listening experiences. Leave the hassle of music selection in the past with seamless, cross-platform group collaboration.</p>
             </Box>
         </Grid>
     )

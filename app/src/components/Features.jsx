@@ -100,20 +100,20 @@ export default function Section4(props) {
             description: "We want to reinvent the collaborative music experience. Our powerful machine learning algorithms can learn your music preferences better than you to provide an unparalleled listening experience. Leave the hassle of music selection in the past with seamless, cross-platform group collaboration. At Aux, our mission is to provide our users with the tools necessary to make every group listening experience an Aux experience."
         }, {
             ix: 2,
-            name: "Live Playlists",
-            description: "One of our most exciting, revolutionary features are our live playlists. Live playlists allow for users to come and go from a playlist lobby and have the algorithm constantly reconfigure the music accordingly. For example, say Mark enters the party a little late, as soon as he joins the live playlist party, Mark’s music data will be taken into account. As soon as Mark is ready to go home, he just simply leaves the party and his preferences no longer have an effect on the party."
+            name: "Live Playlists", //
+            description: "Live playlists are an exciting feature that allows our song selection algorithm to reconfigure playlists as users join and leave streaming lobbies. For example, Mark comes to a party a little late. As soon as Mark arrives, he can still join the live playlist party and have his music data incorporated into the listening experience of the party. As soon as Mark is ready to go home, he leaves the listening party, and his music preferences no longer affect the party's playlist."
         }, {
             ix: 3,
-            name: "AI That Learns With You",
-            description: "Our selection software is continuously updating and learning what you like to listen to so that when you and your friends want to listen to music together, our software knows what you like, what they like, and will find the perfect middle ground. The more you use Aux, the more Aux will learn and be able to provide you with better playlists."
+            name: "AI That Learns With You", //
+            description: "Our music selection software utilizes neural networks that understand prior group playlist dynamics to improve future group listening experiences. Aux generates distinct user signatures by managing data from streaming services providers. Our software offers continuously refined curation, allowing Aux to offer better song recommendations as users spend more time on the platform."
         }, {
             ix: 4,
-            name: "Pair With Anyone",
-            description: "Ever wonder what your favorite artists are actually listening to? How about what your favorite sports star likes to listen to when they warm up for a big game? Aux allows users to set their profile as public so you don’t need to be invited to make a playlist. This means you can search up any Aux user and if they’re public, create a playlist between you two immediately. Next time you’re listening with friends, add your favorite celebrity’s Aux profile to the mix!"
+            name: "Pair With Anyone", //
+            description: "People are always looking for additional ways to connect. Aux allows people to blend their music preferences in a playlist with their favorite music artists, celebrities, and friends. Users can make their profiles public, allowing people to create Aux playlists through a simple search. Next time you’re listening with friends, add your favorite celebrity’s Aux profile to the mix!"
         }, {
             ix: 5,
-            name: "Quick Sync With Friends",
-            description: "Aux allows you to turn on quick sync once your are friends on our app. Quick synch allows you to not even need to open the app to join a host’s playlist. The host can simply sync you at any time allowing them to create playlists even faster. This feature is especially useful for things like car rides with a friend where you both already know each other and you’d like to quickly put on music every time you get in the car."
+            name: "Quick Sync With Friends", //
+            description: "As Aux learns who you frequently listen with, the quick sync feature will automatically send you and your friend a playlist invitation once you’re near each other. This enables users to join playlists through a simple notification swipe. The quick synch feature is handy for things like car rides with a friend as it allows for effortless playlist creation."
         }
     ]
     return (
