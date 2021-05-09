@@ -7,7 +7,7 @@ import featureImg from "../assets/Music.png"
 import '../styles/Features.css';
 import carouselbg from '../assets/carousel-background.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     featureSection: {
         backgroundColor: `rgb(27,25,28)`,
         paddingBottom: '5vh',
@@ -68,8 +68,18 @@ const useStyles = makeStyles({
     dotsWrap: {
         paddingTop: ``,
         textAlign: `center`
+    },
+    carouselMobile: {
+        [theme.breakpoints.down('md')]: {
+            width: '100%',
+        }
+    },
+    carouselSlidey: {
+        [theme.breakpoints.down('md')]: {
+            height: '50vh !important',
+        }
     }
-})
+}))
 
 function FadeInSection(props) {
     const [isVisible, setVisible] = React.useState(false);
@@ -121,7 +131,7 @@ export default function Section4(props) {
             <Grid item xs={12} className={classes.title}>
                 <Typography align="center" variant="h2">Key Functionalities</Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6} className={classes.carouselMobile}>
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={100}
@@ -129,7 +139,7 @@ export default function Section4(props) {
                     className={classes.pureCarousel}
                     infinite={true}
                     isPlaying={true}
-                    interval={2500}
+                    interval={5000}
                 >
                     <Slider className={classes.carouselSlidey}>
                         {items.map(item => (
@@ -144,8 +154,8 @@ export default function Section4(props) {
                     </div>
                 </CarouselProvider>
             </Grid>
-            <Grid item xs={1}></Grid>
-            <Grid item xs={5}>
+            <Grid item md={1}></Grid>
+            <Grid item md={5}>
                 <Box>
                     <FadeInSection>
                         <img src={featureImg} className={classes.featureImg} />
