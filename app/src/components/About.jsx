@@ -4,7 +4,7 @@ import section2img from "../assets/new-about.png";
 import squirrelydan from "../assets/sqirl-2.png";
 import "../styles/About.css";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     sec2img: {
         height: `100%`,
         width: `100%`
@@ -14,10 +14,19 @@ const useStyles = makeStyles({
         fontSize: `40px`,
         fontWeight: `200`,
         lineHeight: `50px`,
+        [theme.breakpoints.down('sm')]: {
+            textAlign: `center`
+        }
     },
     sec2container: {
         margin: `0 5vw`,
         minHeight: `90vh`,
+        
+    },
+    sec2textwrap: {
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: `column-reverse`
+        }
     },
     body: {
         fontFamily: `Montserrat`,
@@ -37,10 +46,13 @@ const useStyles = makeStyles({
         height: `auto`,
     },
     aboutText: {
-        marginLeft: '10%'
+        marginLeft: '10%',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: `0px`
+        }
     },
 
-});
+}));
 
 function FadeInSection(props) {
     const [isVisible, setVisible] = React.useState(false);
@@ -61,8 +73,8 @@ function FadeInSection(props) {
 export default function About(props) {
     const classes = useStyles();
     return (
-        <Grid item container id="1" className={classes.sec2container} >
-            <Grid item container alignItems="center" justify="center">
+        <Grid item container id="1" className={classes.sec2container}>
+            <Grid item container alignItems="center" justify="center" className={classes.sec2textwrap}>
                 <Grid item md={4} >
                     <FadeInSection>
                         <img src={section2img} className={classes.sec2img} />

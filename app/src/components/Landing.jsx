@@ -15,7 +15,8 @@ const useStyles = makeStyles(theme => (
         leftLanding: {
             textAlign: `center`,
             [theme.breakpoints.down('md')]: {
-                margin: `0px`
+                margin: `0px`,
+                paddingTop: `10vw`
             }
         },
         auxLogo: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => (
             maxHeight: `671px`
         },
         countdownCard: {
-            width: `8vw`,
+            width: `100%`,
             alignItems: `center`,
             alignContent: `center`,
             textAlign: `center`,
@@ -48,7 +49,10 @@ const useStyles = makeStyles(theme => (
             backgroundOrigin: 'border-box',
             backgroundClip: 'content-box, border-box',
             boxShadow: '2px 1000px 1px rgb(56,23,92) inset',
-            borderRadius: '15px'
+            borderRadius: '15px',
+            [theme.breakpoints.down('md')]: {
+                width: `90px`
+            }
         },
         countdownLabel: {
             textAlign: `center`,
@@ -67,7 +71,7 @@ const useStyles = makeStyles(theme => (
             marginBottom: `1vh`,
             fontFamily: `Montserrat`,
             fontSize: `22px`,
-        }
+        },
     }
 ));
 
@@ -98,39 +102,47 @@ const Countdown = (props) => {
     });
 
     return (
-        <Grid item container justify="center"> 
-            <Card className={classes.countdownCard}>
-                <CardContent>
-                    <h4 className={classes.countdownAmt}>{days}</h4>
-                </CardContent>
-                <div className={classes.countdownLabel}>
-                    days
+        <Grid item container justify="center" sm={12} id="top">
+            <Grid item container xs={6} sm={3} justify="flex-end">
+                <Card className={classes.countdownCard}>
+                    <CardContent>
+                        <h4 className={classes.countdownAmt}>{days}</h4>
+                    </CardContent>
+                    <div className={classes.countdownLabel}>
+                        days
                 </div>
-            </Card>
-            <Card className={classes.countdownCard}>
-                <CardContent>
-                    <h4 className={classes.countdownAmt}>{hours}</h4>
-                </CardContent>
-                <div className={classes.countdownLabel}>
-                    hours
+                </Card>
+            </Grid>
+            <Grid item container xs={6} sm={3} justify="flex-start">
+                <Card className={classes.countdownCard}>
+                    <CardContent>
+                        <h4 className={classes.countdownAmt}>{hours}</h4>
+                    </CardContent>
+                    <div className={classes.countdownLabel}>
+                        hours
                 </div>
-            </Card>
-            <Card className={classes.countdownCard}>
-                <CardContent>
-                    <h4 className={classes.countdownAmt}>{minutes}</h4>
-                </CardContent>
-                <div className={classes.countdownLabel}>
-                    minutes
+                </Card>
+            </Grid>
+            <Grid item container xs={6} sm={3} justify="flex-end">
+                <Card className={classes.countdownCard}>
+                    <CardContent>
+                        <h4 className={classes.countdownAmt}>{minutes}</h4>
+                    </CardContent>
+                    <div className={classes.countdownLabel}>
+                        minutes
                 </div>
-            </Card>
-            <Card className={classes.countdownCard}>
-                <CardContent>
-                    <h4 className={classes.countdownAmt}>{seconds}</h4>
-                </CardContent>
-                <div className={classes.countdownLabel}>
-                    seconds
+                </Card>
+            </Grid>
+            <Grid item container xs={6} sm={3} justify="flex-start">
+                <Card className={classes.countdownCard}>
+                    <CardContent>
+                        <h4 className={classes.countdownAmt}>{seconds}</h4>
+                    </CardContent>
+                    <div className={classes.countdownLabel}>
+                        seconds
                 </div>
-            </Card>
+                </Card>
+            </Grid>
         </Grid>
     )
 }
