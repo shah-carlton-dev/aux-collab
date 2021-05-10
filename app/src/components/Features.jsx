@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     carouselText: {
         fontFamily: `Montserrat`,
         fontSize: `20px`,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: `16px`,
         },
         marginLeft: `2px`,
