@@ -41,7 +41,10 @@ const useStyles = makeStyles(theme => ({
     },
     carouselText: {
         fontFamily: `Montserrat`,
-        fontSize: `16px`,
+        fontSize: `20px`,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: `16px`,
+        },
         marginLeft: `2px`,
         marginRight: `2px`
     },
@@ -63,7 +66,10 @@ const useStyles = makeStyles(theme => ({
         backgroundImage: `url(${carouselbg})`,
         backgroundSize: `100% 100%`,
         padding: `20%`,
-        height: `100%`
+        height: `100% !important`,
+        [theme.breakpoints.down('sm')]: {
+            height: '70vh !important',
+        }
     },
     dotsWrap: {
         paddingTop: ``,
@@ -76,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     },
     carouselSlidey: {
         [theme.breakpoints.down('md')]: {
-            height: '50vh !important',
+            height: '60vh !important',
         }
     }
 }))
@@ -129,7 +135,7 @@ export default function Section4(props) {
     return (
         <Grid item container className={classes.featureSection} id="3" alignItems="center">
             <Grid item xs={12} className={classes.title}>
-                <Typography align="center" variant="h2">Key Functionalities</Typography>
+                <Typography align="center" variant="h2" style={{ fontSize: '40px' }}>Key Functionalities</Typography>
             </Grid>
             <Grid item md={6} className={classes.carouselMobile}>
                 <CarouselProvider

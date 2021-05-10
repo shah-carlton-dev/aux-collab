@@ -74,9 +74,10 @@ const useStyles = makeStyles(() => ({
         backgroundClip: 'content-box, border-box',
         boxShadow: '2px 1000px 1px #0A0A11 inset',
         borderRadius: '90px',
-        marginTop: '50px',
+        marginTop: '20px',
         whiteSpace: `nowrap`,
-        width: `22vw`
+        minWidth: `22vw`,
+        width: `fit-content`
     }
 }));
 
@@ -318,25 +319,26 @@ export default function Contact(props) {
     )
     return (
         <div className="contactWrapper" id="4">
-            <div className="contact-row">
-                <div className="contact-column">
+            <Grid item container justify="center">
+                <Typography align="center" variant="h2" className="contactHeader">
+                    Try Aux Yourself
+                    </Typography>
+            </Grid>
+            <Grid item container direction="row" style={{ padding: 0, margin: 0 }}>
+                <Grid item container sm={6} xs={12} justify="center" >
                     <Button variant="contained" className={classes.betaAccess} onClick={handleOpen}>
                         <Typography align="center" variant="h6"> Contact </Typography>
                     </Button>
-                </div>
-                <div className="contact-column-mid">
-                    <Typography align="center" variant="h2" className="contactHeader">
-                        Try Aux Yourself
-                    </Typography>
-                </div>
-                <div className="contact-column">
+                </Grid>
+
+                <Grid item container sm={6} xs={12} justify="center" >
                     <Typography align="center">
                         <Button variant="contained" onClick={handleOpenTwo} className={classes.betaAccess}>
                             <Typography align="center" variant="h6"> Request Beta Access </Typography>
                         </Button>
                     </Typography>
-                </div>
-            </div>
+                </Grid>
+            </Grid>
             <Modal
                 open={open}
                 onClose={handleClose}
