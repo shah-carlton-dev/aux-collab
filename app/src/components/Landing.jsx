@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Grid, Box, Slide, Button, Card, CardContent, CardActions } from '@material-ui/core';
+import { makeStyles, Grid, Box, Slide, Button, Card, CardContent, Modal } from '@material-ui/core';
 import logoimg from "../assets/aux-landing.gif";
 import phoneplayer from "../assets/desktop-3aux-3d-mockup-laying-down-647EDE2D-69EE-4F7B-B5ED-D78AC0A7318B 1.png";
 
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => (
         },
         leftLanding: {
             textAlign: `center`,
-            [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('sm')]: {
                 margin: `0px`,
                 paddingTop: `10vw`
             }
@@ -150,6 +150,8 @@ const Countdown = (props) => {
 
 export default function Landing(props) {
     const classes = useStyles();
+    const [showVideo, setShowVideo] = React.useState(false);
+
     const releaseDate = new Date(2021, 4, 28);
     const currentDate = new Date();
     let days = releaseDate.getDate() - currentDate.getDate();
@@ -194,15 +196,27 @@ export default function Landing(props) {
                 <Grid item md={6}>
                     <Slide direction="left" in={true} timeout={1000} mountOnEnter unmountOnExit>
                         <Box className={classes.phoneContainer}>
-                            <img src={phoneplayer} className={classes.phonePlayer}></img>
+                            <Button onClick={() => setShowVideo(true)}>
+                                <img src={phoneplayer} className={classes.phonePlayer}></img>
+                            </Button>
                         </Box>
                     </Slide>
 
                 </Grid>
-                <Grid item md={6}>
-                    {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/GfueGrOLXS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+                <Grid item md={6} show={showVideo}>
+
                 </Grid>
             </Grid>
+            <Modal
+                open={showVideo}
+                onClose={() => setShowVideo(false)}
+                disableAutoFocus={true}
+                disableEnforceFocus={true}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GfueGrOLXS4" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </Modal>
         </Grid>
+
     )
 }
