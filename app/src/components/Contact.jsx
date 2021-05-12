@@ -6,7 +6,7 @@ import popupImage from '../assets/ContactPopUp.png';
 import Axios from "axios";
 import { db } from "../firestore.js";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
     paper: {
         position: 'absolute',
         width: 675,
@@ -17,7 +17,24 @@ const useStyles = makeStyles(() => ({
         marginTop: -200,
         backgroundImage: `url(${popupImage})`,
         backgroundSize: 'contain',
-        borderRadius: '20px'
+        borderRadius: '20px',
+        [theme.breakpoints.down('sm')]: {
+            width: `100%`,
+            maxWidth: `100vw`,
+            top: `250px`,
+            marginLeft: `-50vw`,
+            backgroundSize: `cover`
+        }
+    },
+    contactPaper: {
+        [theme.breakpoints.down('sm')]: {
+            width: `100%`,
+            maxWidth: `100vw`,
+            top: `250px`,
+            height: `80vh`,
+            marginLeft: `-50vw`,
+            backgroundSize: `cover`
+        }
     },
     innerContact: {
         margin: '5%'
@@ -48,7 +65,6 @@ const useStyles = makeStyles(() => ({
         "&:hover, &:focus": {
             backgroundColor: '#0A0A11 !important',
         },
-        boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
         border: 'solid 3px transparent',
         backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
         backgroundOrigin: 'border-box',
@@ -57,7 +73,10 @@ const useStyles = makeStyles(() => ({
         borderRadius: '90px'
     },
     modal: {
-        outline: 'none !important'
+        outline: 'none !important',
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: `100vw`,
+        }
     },
     contactButton: {
         marginTop: '28px'
@@ -67,7 +86,6 @@ const useStyles = makeStyles(() => ({
         "&:hover, &:focus": {
             backgroundColor: '#0A0A11 !important',
         },
-        boxShadow: '0 0 6px 0 rgba(157, 96, 212, 0.5)',
         border: 'solid 3px transparent',
         backgroundImage: 'linear-gradient(rgba(10, 10, 17, 0), rgba(10, 10, 17, 0)), linear-gradient(101deg, #6720B3, #A9209C)',
         backgroundOrigin: 'border-box',
@@ -78,6 +96,11 @@ const useStyles = makeStyles(() => ({
         whiteSpace: `nowrap`,
         minWidth: `22vw`,
         width: `fit-content`
+    },
+    formContainer: {
+        maxWidth: `80vw`,
+        width: 'auto',
+        margin: 0
     }
 }));
 
@@ -132,18 +155,17 @@ export default function Contact(props) {
         e.preventDefault();
         const data = { email, appleid };
         const accessRef = db.collection("beta-access").add(data);
-        console.log(accessRef);
         setAccessSuccess(true);
         setTimeout(handleCloseTwo, 1000);
     }
 
     const body = (
-        <div className={classes.paper}>
+        <div className={`${classes.paper} ${classes.contactPaper}`}>
             <div className={classes.innerContact}>
                 <Typography align="center" variant="h4"> Contact Us</Typography>
                 <form className={classes.contactForm} noValidate autoComplete="off">
-                    <Grid item container spacing={2}>
-                        <Grid item md={6}>
+                    <Grid item container spacing={2} justify="center" className={classes.formContainer}>
+                        <Grid item sm={6} xs={12}>
                             <TextField
                                 className={classes.contactItem}
                                 label="First Name"
@@ -163,7 +185,7 @@ export default function Contact(props) {
                             >
                             </TextField>
                         </Grid>
-                        <Grid item md={6}>
+                        <Grid item sm={6} xs={12}>
                             <TextField
                                 className={classes.contactItem}
                                 label="Last Name"
@@ -183,7 +205,7 @@ export default function Contact(props) {
                             >
                             </TextField>
                         </Grid>
-                        <Grid item md={6}>
+                        <Grid item sm={6} xs={12}>
                             <TextField
                                 className={classes.contactItem}
                                 label="Email"
@@ -203,7 +225,7 @@ export default function Contact(props) {
                             >
                             </TextField>
                         </Grid>
-                        <Grid item md={6}>
+                        <Grid item sm={6} xs={12}>
                             <TextField
                                 className={classes.contactItem}
                                 label="Phone Number"
@@ -222,7 +244,7 @@ export default function Contact(props) {
                             >
                             </TextField>
                         </Grid>
-                        <Grid item md={12}>
+                        <Grid item xs={12}>
                             <TextField
                                 className={classes.contactItem}
                                 label="Message"
@@ -262,7 +284,7 @@ export default function Contact(props) {
             <div className={classes.innerContact}>
                 <Typography align="center" variant="h4"> Submit your Apple ID to request beta access today:</Typography>
                 <form className={classes.contactForm} noValidate autoComplete="off">
-                    <Grid item container spacing={3}>
+                    <Grid item container spacing={3} justify="center" className={classes.formContainer}>
                         <Grid item md={12}>
                             <TextField
                                 className={classes.contactItem}
