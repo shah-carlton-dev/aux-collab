@@ -5,6 +5,7 @@ import { useState } from 'react';
 import popupImage from '../assets/ContactPopUp.png';
 import Axios from "axios";
 import { db } from "../firestore.js";
+import cimg from '../assets/contact-darkbg.png';
 
 const useStyles = makeStyles(() => ({
     paper: {
@@ -78,6 +79,13 @@ const useStyles = makeStyles(() => ({
         whiteSpace: `nowrap`,
         minWidth: `22vw`,
         width: `fit-content`
+    },
+    cimg: {
+        height: '60%'
+    },
+    img: {
+        width: '100%',
+        height: 'auto'
     }
 }));
 
@@ -337,6 +345,11 @@ export default function Contact(props) {
                             <Typography align="center" variant="h6"> Request Beta Access </Typography>
                         </Button>
                     </Typography>
+                </Grid>
+                <Grid item container justify="center">
+                    <Grid item sm={8} className={classes.cimg}>
+                        <img className={classes.img} src={cimg} />
+                    </Grid>
                 </Grid>
             </Grid>
             <Modal
