@@ -63,12 +63,11 @@ const useStyles = makeStyles(theme => ({
         backgroundImage: `url(${carouselbg})`,
         backgroundSize: `100% 100%`,
         padding: `15%`,
-        // height: `35vh`,
         [theme.breakpoints.down('sm')]: {
             height: '45vh !important',
         },
         [theme.breakpoints.down('xs')]: {
-            height: '55vh !important',
+            height: '60vh !important',
         }
     },
     dotsWrap: {
@@ -78,7 +77,7 @@ const useStyles = makeStyles(theme => ({
             marginTop: `-17vh`
         },
         [theme.breakpoints.down('xs')]: {
-            marginTop: `-10vh`
+            marginTop: `-5vh`
         }
     },
     carouselMobile: {
