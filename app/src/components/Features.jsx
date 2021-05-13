@@ -15,7 +15,11 @@ const useStyles = makeStyles(theme => ({
         minHeight: `100vh`
     },
     featureImg: {
-        height: `40vh`,
+        height: `45vh`,
+        width: `auto`,
+        [theme.breakpoints.down('sm')]: {
+            maxHeight: `40vh`,
+        },
     },
     header: {
         fontFamily: `'Prompt', sans-serif`,
@@ -52,32 +56,34 @@ const useStyles = makeStyles(theme => ({
         minHeight: `80vh`,
         maxHeight: `80vh`
     },
-    wrapper: {
-        backgroundImage: `url(${carouselbg})`,
-        width: `auto`,
-        height: `auto`,
-        backgroundSize: `100% 75%`,
-        padding: `20%`,
-    },
     carouselContent: {
 
     },
     pureCarousel: {
         backgroundImage: `url(${carouselbg})`,
         backgroundSize: `100% 100%`,
-        padding: `20%`,
-        height: `100% !important`,
+        padding: `15%`,
+        // height: `35vh`,
         [theme.breakpoints.down('sm')]: {
-            height: '70vh !important',
+            height: '45vh !important',
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '55vh !important',
         }
     },
     dotsWrap: {
-        paddingTop: ``,
-        textAlign: `center`
+        textAlign: `center`,
+        marginTop: `-12vh`,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: `-17vh`
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginTop: `-10vh`
+        }
     },
     carouselMobile: {
         [theme.breakpoints.down('md')]: {
-            width: '100%',
+            width: '80%',
         }
     },
     carouselSlidey: {
@@ -137,31 +143,33 @@ export default function Section4(props) {
             <Grid item xs={12} className={classes.title}>
                 <Typography align="center" variant="h2" style={{ fontSize: '40px' }}>Key Functionalities</Typography>
             </Grid>
-            <Grid item md={6} className={classes.carouselMobile}>
-                <CarouselProvider
-                    naturalSlideWidth={100}
-                    naturalSlideHeight={100}
-                    totalSlides={6}
-                    className={classes.pureCarousel}
-                    infinite={true}
-                    isPlaying={true}
-                    interval={5000}
-                >
-                    <Slider className={classes.carouselSlidey}>
-                        {items.map(item => (
-                            <Slide index={item.ix}>
-                                <h4 className={classes.carouselHeader}>{item.name}</h4>
-                                <p className={classes.carouselText}>{item.description}</p>
-                            </Slide>
-                        ))}
-                    </Slider>
-                    <div className={classes.dotsWrap}>
-                        <DotGroup />
-                    </div>
-                </CarouselProvider>
+            <Grid item container md={6} xs={12} justify="center" className={classes.carouselMobile}>
+                <Grid item xs={11} sm={8} md={12}>
+                    <CarouselProvider
+                        naturalSlideWidth={100}
+                        naturalSlideHeight={100}
+                        totalSlides={6}
+                        className={classes.pureCarousel}
+                        infinite={true}
+                        isPlaying={true}
+                        interval={5000}
+                    >
+                        <Slider className={classes.carouselSlidey}>
+                            {items.map(item => (
+                                <Slide index={item.ix}>
+                                    <h4 className={classes.carouselHeader}>{item.name}</h4>
+                                    <p className={classes.carouselText}>{item.description}</p>
+                                </Slide>
+                            ))}
+                        </Slider>
+                        <div className={classes.dotsWrap}>
+                            <DotGroup />
+                        </div>
+                    </CarouselProvider>
+                </Grid>
             </Grid>
-            <Grid item md={1}></Grid>
-            <Grid item md={5}>
+            <Grid item md={1} xs={false}></Grid>
+            <Grid item container justify="center" md={5} xs={12}>
                 <Box>
                     <FadeInSection>
                         <img src={featureImg} className={classes.featureImg} />

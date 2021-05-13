@@ -32,7 +32,8 @@ const useStyles = makeStyles(theme => ({
 		},
 		[theme.breakpoints.down('xs')]: {
 			display: `none`,
-		}
+		},
+		minWidth: `fit-content`
 	},
 	dropdownBtn: {
 		[theme.breakpoints.up('xs')]: {
@@ -124,7 +125,7 @@ const useStyles = makeStyles(theme => ({
 		marginTop: '20px',
 		whiteSpace: `nowrap`,
 		minWidth: `22vw`,
-		width: `fit-content`
+		width: `fit-content`,
 	},
 	formContainer: {
 		maxWidth: `80vw`,
@@ -293,17 +294,15 @@ export default function Header(props) {
 							<img src={headphonesLogo} height="78" alt="headphones logo" />
 						</IconButton>
 					</Grid>
-					<Grid item container xs={8} sm={11} direction="row" justify="flex-end" >
-						<Grid item container xs={false} sm={8} justify="flex-end" alignItems="center">
-							{navLinks.map(({ title, path }) => (
-								<Grid item className={`${classes.navLink} ${classes.navText}`}>
-									<a href={path} key={title} className={classes.linkText}>{title}</a>
-								</Grid>
-							))}
-						</Grid>
-						<Grid item container xs={8} sm={2} className={classes.navLink} justify="flex-end">
-							<Button variant="outlined" onClick={handleOpenTwo}>Request Beta Access</Button>
-						</Grid>
+					<Grid item container xs={false} sm={10} direction="row" justify="flex-end" >
+						{navLinks.map(({ title, path }) => (
+							<Grid item sm={2} className={`${classes.navLink} ${classes.navText}`}>
+								<a href={path} key={title} className={classes.linkText}>{title}</a>
+							</Grid>
+						))}
+					</Grid>
+					<Grid item container xs={8} sm={5} className={classes.navLink} justify="flex-end">
+						<Button variant="outlined" onClick={handleOpenTwo}>Request Beta Access</Button>
 					</Grid>
 				</Toolbar>
 			</AppBar>
@@ -317,7 +316,7 @@ export default function Header(props) {
 			disableAutoFocus={true}
 			disableEnforceFocus={true}
 			className={classes.modal}
-			style={{display:'flex',alignItems:'center',justifyContent:'center'}}
+			style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
 		>
 			{bodyTwo}
 		</Modal>
