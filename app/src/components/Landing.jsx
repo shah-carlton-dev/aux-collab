@@ -402,7 +402,7 @@ export default function Landing(props) {
                 disableEnforceFocus={true}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             >
-                <iframe width="315" height="560" src="https://www.youtube.com/embed/GfueGrOLXS4" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="315" height="560" src="https://www.youtube.com/embed/BSWNNHz7kLA" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {/* galen's video https://www.youtube.com/embed/Srjep8wa-I4 */}
             </Modal>
         </Grid>

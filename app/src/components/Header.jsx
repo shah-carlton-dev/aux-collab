@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core"
 import { AppBar, Toolbar, Button, IconButton, Grid, Slide, useScrollTrigger, Menu, MenuItem, Typography, TextField, Modal } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import headphonesLogo from "../assets/desktop-6auxlogo1-6A76F79B-B362-4BA2-B330-1E9D04F0284A@2x.png";
+import headphonesLogo from "../assets/actual-aux-logo.png";
 import "../styles/Header.css";
 import '../styles/Contact.css';
 import { db } from "../firestore.js";
@@ -302,7 +302,7 @@ export default function Header(props) {
 							))}
 						</Grid>
 						<Grid item container xs={8} sm={2} className={classes.navLink} justify="flex-end">
-							<Button variant="outlined" onClick={handleOpenTwo}>Beta Access</Button>
+							<Button variant="outlined" onClick={handleOpenTwo}>Request Beta Access</Button>
 						</Grid>
 					</Grid>
 				</Toolbar>
