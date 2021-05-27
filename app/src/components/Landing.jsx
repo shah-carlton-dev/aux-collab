@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles, Grid, Box, Slide, Button, Card, CardContent, Modal, Typography, TextField } from '@material-ui/core';
 import logoimg from "../assets/aux-landing.gif";
 import phoneplayer from "../assets/desktop-3aux-3d-mockup-laying-down-647EDE2D-69EE-4F7B-B5ED-D78AC0A7318B 1.png";
@@ -179,9 +179,9 @@ const Countdown = (props) => {
                 if (minutes === 0) {
                     clearInterval(myInterval)
                 } else {
-                    if(minutes < 0) {
-                        setMinutes(60+minutes);
-                        setHours(hours-1);
+                    if (minutes < 0) {
+                        setMinutes(60 + minutes);
+                        setHours(hours - 1);
                     }
                     setMinutes(minutes - 1);
                     setSeconds(59);
@@ -243,13 +243,14 @@ export default function Landing(props) {
     const classes = useStyles();
     const [showVideo, setShowVideo] = React.useState(false);
     const [accessSuccess, setAccessSuccess] = useState(false);
-	const [openTwo, setOpenTwo] = useState(false);
+    const [openTwo, setOpenTwo] = useState(false);
 
     let email, appleid = "";
 
-    const releaseDate = new Date(2021, 4, 28);
+    const releaseDate = new Date('June 1, 2021');
     const currentDate = new Date();
-    let days = releaseDate.getDate() - currentDate.getDate();
+    const released = (releaseDate < currentDate);
+    let days = releaseDate.getDate() - currentDate.getDate() + 31;
     let hours = releaseDate.getHours() - currentDate.getHours();
     let mins = releaseDate.getMinutes() - currentDate.getMinutes();
     let secs = releaseDate.getSeconds() - currentDate.getSeconds();
@@ -268,23 +269,23 @@ export default function Landing(props) {
     }
 
     const handleOpenTwo = () => {
-		setOpenTwo(true);
-	}
+        setOpenTwo(true);
+    }
 
-	const handleCloseTwo = () => {
-		setOpenTwo(false);
-		setAccessSuccess(false);
-		appleid = email = "";
-	}
+    const handleCloseTwo = () => {
+        setOpenTwo(false);
+        setAccessSuccess(false);
+        appleid = email = "";
+    }
 
 
-	const getAccess = (e) => {
-		e.preventDefault();
-		const data = { email, appleid };
-		const accessRef = db.collection("beta-access").add(data);
-		setAccessSuccess(true);
-		setTimeout(handleCloseTwo, 1000);
-	}
+    const getAccess = (e) => {
+        e.preventDefault();
+        const data = { email, appleid };
+        const accessRef = db.collection("beta-access").add(data);
+        setAccessSuccess(true);
+        setTimeout(handleCloseTwo, 1000);
+    }
 
     const bodyTwo = (
         <div className={classes.paper}>
@@ -362,8 +363,13 @@ export default function Landing(props) {
                                     <Button variant="outlined" onClick={() => setShowVideo(true)}>Demo Video</Button>
                                 </Grid>
                             </Grid>
-                            <h4 className={classes.betaRelease}>Beta Version Release</h4>
-                            <Countdown initialDay={days} initialHour={hours} initialMinute={mins} initialSeconds={secs}></Countdown>
+                            {
+                                released ? <></> :
+                                    <>
+                                        <h4 className={classes.betaRelease}>Beta Version Release</h4>
+                                        <Countdown initialDay={days} initialHour={hours} initialMinute={mins} initialSeconds={secs}></Countdown>
+                                    </>
+                            }
                         </Box>
 
                     </Slide>
