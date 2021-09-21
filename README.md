@@ -5,6 +5,6 @@ Site is live at auxtunes.com!
 Built using React with contact form storage through Firebase.
 
 ## Contributors 
-Mac Carlton /n
-Rushil Shah
+Mac Carlton, 
+Rushil Shah, 
 Lauren Cmiel (design)
