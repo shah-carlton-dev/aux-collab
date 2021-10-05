@@ -363,8 +363,8 @@ export default function Contact(props) {
 
                 <Grid item container sm={6} xs={12} justify="center" >
                     <Typography align="center">
-                        <Button variant="contained" onClick={handleOpenTwo} className={classes.betaAccess}>
-                            <Typography align="center" variant="h6"> Request Beta Access </Typography>
+                        <Button variant="contained" target="_blank" href="https://apps.apple.com/us/app/aux-tunes/id1569550733" className={classes.betaAccess}>
+                            <Typography align="center" variant="h6"> Download Now </Typography>
                         </Button>
                     </Typography>
                 </Grid>

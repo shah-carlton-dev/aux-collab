@@ -12,12 +12,12 @@ const Footer = () => {
             <div className="footer-wrapper">
                 <div className="logo-row">
                     <div className="logo-column">
-                        <a href="https://www.facebook.com/AuxCollaborative/" target="_blank">
+                        <a href="https://www.facebook.com/AuxTunes/" target="_blank">
                             <img src={fb} alt="facebook" className="ft-img" />
                         </a>
                     </div>
                     <div className="logo-column">
-                        <a href="https://www.instagram.com/auxcollaborative/" target="_blank">
+                        <a href="https://instagram.com/aux.ai?utm_medium=copy_link" target="_blank">
                             <img src={insta} alt="instagram" className="ft-img" />
                         </a>
                     </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="logo-column">
-                        <a href="https://twitter.com/auxplaylists?lang=en" target="_blank">
+                        <a href="https://twitter.com/aux_ai?s=21" target="_blank">
                             <img src={twitter} alt="twitter" className="ft-img" />
                         </a>
                     </div>

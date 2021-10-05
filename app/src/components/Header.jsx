@@ -302,7 +302,7 @@ export default function Header(props) {
 						))}
 					</Grid>
 					<Grid item container xs={8} sm={5} className={classes.navLink} justify="flex-end">
-						<Button variant="outlined" onClick={handleOpenTwo}>Request Beta Access</Button>
+						<Button variant="outlined" target="_blank" href="https://apps.apple.com/us/app/aux-tunes/id1569550733">Download Now</Button>
 					</Grid>
 				</Toolbar>
 			</AppBar>

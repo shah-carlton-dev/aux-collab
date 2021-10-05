@@ -357,11 +357,11 @@ export default function Landing(props) {
                             <p className={classes.subtitle}>The Future of Collaborative Listening</p>
                             <Grid item container direction="row" justify="center">
                                 <Grid item className={classes.buttonContainer}>
-                                    <Button variant="outlined" onClick={handleOpenTwo}>Start Listening</Button>
+                                    <Button variant="outlined" target="_blank" href="https://apps.apple.com/us/app/aux-tunes/id1569550733">Start Listening</Button>
                                 </Grid>
-                                <Grid item className={classes.buttonContainer}>
+                                {/* <Grid item className={classes.buttonContainer}>
                                     <Button variant="outlined" onClick={() => setShowVideo(true)}>Demo Video</Button>
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                             {
                                 released ? <></> :
