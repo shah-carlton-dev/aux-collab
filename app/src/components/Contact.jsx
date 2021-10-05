@@ -112,14 +112,11 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-// import cImage from '../assets/contact-revised.png';
 export default function Contact(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-    const [openTwo, setOpenTwo] = useState(false);
     const [emailSuccess, setEmailSuccess] = useState(false);
-    const [accessSuccess, setAccessSuccess] = useState(false);
-    let appleid, fname, lname, email, phone, message = "";
+    let fname, lname, email, phone, message = "";
 
     const handleOpen = () => {
         setOpen(true);
@@ -129,16 +126,6 @@ export default function Contact(props) {
         setOpen(false);
         setEmailSuccess(false);
         fname = lname = email = phone = message = "";
-    }
-
-    const handleOpenTwo = () => {
-        setOpenTwo(true);
-    }
-
-    const handleCloseTwo = () => {
-        setOpenTwo(false);
-        setAccessSuccess(false);
-        appleid = email = "";
     }
 
     const sendMessage = (e) => {
@@ -157,14 +144,6 @@ export default function Contact(props) {
             setEmailSuccess(res.data.isEmailSend);
             setTimeout(handleClose, 1000);
         }).catch();
-    }
-
-    const getAccess = (e) => {
-        e.preventDefault();
-        const data = { email, appleid };
-        const accessRef = db.collection("beta-access").add(data);
-        setAccessSuccess(true);
-        setTimeout(handleCloseTwo, 1000);
     }
 
     const body = (
@@ -287,66 +266,7 @@ export default function Contact(props) {
             </div>
         </div>
     )
-    const bodyTwo = (
-        <div className={classes.paper}>
-            <div className={classes.innerContact}>
-                <Typography align="center" variant="h4"> Submit your Apple ID to request beta access today:</Typography>
-                <form className={classes.contactForm} noValidate autoComplete="off">
-                    <Grid item container spacing={3} justify="center" className={classes.formContainer}>
-                        <Grid item md={12}>
-                            <TextField
-                                className={classes.contactItem}
-                                label="Email"
-                                variant="filled"
-                                fullWidth
-                                required
-                                onChange={e => (email = e.target.value)}
-                                InputProps={{
-                                    className: classes.multilineColor
-                                }}
-                                InputLabelProps={{
-                                    classes: {
-                                        root: classes.label,
-                                        focused: classes.focusedLabel,
-                                    },
-                                }}
-                            >
-                            </TextField>
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                className={classes.contactItem}
-                                label="Apple ID"
-                                variant="filled"
-                                fullWidth
-                                required
-                                onChange={e => (appleid = e.target.value)}
-                                InputProps={{
-                                    className: classes.multilineColor
-                                }}
-                                InputLabelProps={{
-                                    classes: {
-                                        root: classes.label,
-                                        focused: classes.focusedLabel,
-                                    },
-                                }}
-                            >
-                            </TextField>
-                        </Grid>
-                        <Grid item md={12}>
-                            <Typography align="center">
-                                <Button variant="contained" className={classes.betaAccess} onClick={e => getAccess(e)}>
-                                    <Typography align="center" variant="h6"> Get Access </Typography>
-                                </Button>
-                                {accessSuccess ? <p>Early access request sent successfully!</p> : <></>}
 
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </form>
-            </div>
-        </div>
-    )
     return (
         <div className="contactWrapper" id="4">
             <Grid item container justify="center">
@@ -385,19 +305,6 @@ export default function Contact(props) {
                 className={classes.modal}
             >
                 {body}
-            </Modal>
-
-            <Modal
-                open={openTwo}
-                onClose={handleCloseTwo}
-                BackdropProps={{
-                    className: classes.contactBackdrop
-                }}
-                disableAutoFocus={true}
-                disableEnforceFocus={true}
-                className={classes.modal}
-            >
-                {bodyTwo}
             </Modal>
         </div>
     )
